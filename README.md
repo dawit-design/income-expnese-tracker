@@ -1,1 +1,1 @@
-# income-expnese-tracker
+# income-expense-tracker
