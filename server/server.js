@@ -31,10 +31,18 @@ app.get('/api/v1/users/profile/:id', async (req, res) => {
         res.json(error)
     }
 })
-//Delete/api/v1/users/:id
+//DELETE/api/v1/users/:id
 app.delete('/api/v1/users/:id', async (req, res) => {
     try{
         res.json({msg: 'Delete route'})
+    }catch(error){
+        res.json(error)
+    }
+})
+//PUT/api/v1/users/:id
+app.put('/api/v1/users/:id', async (req, res) => {
+    try{
+        res.json({msg: 'Update route'})
     }catch(error){
         res.json(error)
     }
