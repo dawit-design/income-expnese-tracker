@@ -1,6 +1,7 @@
 const express = require('express');
 const usersRoute = require('./routes/users/users')
 const accountsRoute = require('./routes/accounts/accounts')
+const transactionsRoute = require('./routes/transactions/transactions')
 const app = express();
 
 //middleware
@@ -13,44 +14,9 @@ app.use('/api/v1/users', usersRoute);
 //account routes
 app.use('/api/v1/accounts', accountsRoute);
 
-
-
-
-
 //transaction routes
-//POST/api/v1/transactions
-app.post('/api/v1/transactions', async (req, res) => {
-    try{
-        res.json({msg: 'Create transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
-//GET/api/v1/transactions/:id
-app.get('/api/v1/transactions/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Get A single transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+app.use("/api/v1/transactions", transactionsRoute);
 
-//DELETE/api/v1/transactions/:id
-app.delete('/api/v1/transactions/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Delete transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
-//PUT/api/v1/transactions/:id
-app.put('/api/v1/transactions/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Update transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
 //error handling
 
 //listen to server
