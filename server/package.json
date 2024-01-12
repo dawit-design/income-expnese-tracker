@@ -4,11 +4,15 @@
   "description": "Expense and Income tracker",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "author": "dawit-design",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
