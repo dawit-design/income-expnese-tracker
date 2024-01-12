@@ -48,6 +48,39 @@ app.put('/api/v1/users/:id', async (req, res) => {
     }
 })
 //account routes
+//POST/api/v1/accounts
+app.post('/api/v1/accounts', async (req, res) => {
+    try{
+        res.json({msg: 'Create Account route'})
+    }catch(error){
+        res.json(error)
+    }
+})
+//GET/api/v1/accounts/:id
+app.get('/api/v1/accounts/:id', async (req, res) => {
+    try{
+        res.json({msg: 'Get A single account route'})
+    }catch(error){
+        res.json(error)
+    }
+})
+
+//DELETE/api/v1/accounts/:id
+app.delete('/api/v1/accounts/:id', async (req, res) => {
+    try{
+        res.json({msg: 'Delete account route'})
+    }catch(error){
+        res.json(error)
+    }
+})
+//PUT/api/v1/accounts/:id
+app.put('/api/v1/accounts/:id', async (req, res) => {
+    try{
+        res.json({msg: 'Update account route'})
+    }catch(error){
+        res.json(error)
+    }
+})
 //transaction routes
 //error handling
 
