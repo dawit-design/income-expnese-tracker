@@ -23,16 +23,16 @@ app.post('/api/v1/users/login', async (req, res) => {
         res.json(error)
     }
 })
-//GET/api/v1/users/profile/id
-app.get('/api/v1/users/profile/id', async (req, res) => {
+//GET/api/v1/users/profile/:id
+app.get('/api/v1/users/profile/:id', async (req, res) => {
     try{
         res.json({msg: 'Profile route'})
     }catch(error){
         res.json(error)
     }
 })
-//Delete/api/v1/users/profile/id
-app.delete('/api/v1/users/profile/id', async (req, res) => {
+//Delete/api/v1/users/:id
+app.delete('/api/v1/users/:id', async (req, res) => {
     try{
         res.json({msg: 'Delete route'})
     }catch(error){
