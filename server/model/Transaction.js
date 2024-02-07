@@ -10,9 +10,7 @@ const transactionSchema = new mongoose.Schema(
     },
     transactionType: {
       type: String,
-      enum: [
-        "Income", "Expenses"
-      ],
+      enum: ["Income", "Expenses"],
       required: true,
     },
     ammount: {
@@ -20,28 +18,38 @@ const transactionSchema = new mongoose.Schema(
       required: true,
     },
     category: {
-        type: String,
-        enum: [
-          "Food", "Transportation", "Entertainment", "Shopping", "Utilities", "Health", "Travel", "Education", "Personal", "Groceries", "Bills", "Uncategorized"
-        ],
-        required: true,
-      },
-      color: {
-        type: String,
-
-      },
-    createdBy:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+      type: String,
+      enum: [
+        "Food",
+        "Transportation",
+        "Entertainment",
+        "Shopping",
+        "Utilities",
+        "Health",
+        "Travel",
+        "Education",
+        "Personal",
+        "Groceries",
+        "Bills",
+        "Uncategorized",
+      ],
+      required: true,
+    },
+    color: {
+      type: String,
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
     dateRecoreded: {
-        type: Date,
-        default: Date.now()
+      type: Date,
+      default: Date.now(),
     },
     notes: {
-        type: String,
-        required: true,
-    }
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
