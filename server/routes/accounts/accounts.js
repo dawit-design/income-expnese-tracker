@@ -1,37 +1,13 @@
 const express = require('express');
-
+const {createAccountCtrl, singleAccountCtrl, deleteAccountCtrl, updateAccountCtrl} = require("../../controllers/accounts/accountsCtrl")
 const accountsRoute = express.Router()
 
 //POST/api/v1/accounts
-accountsRoute.post("/", async (req, res) => {
-    try{
-        res.json({msg: 'Create Account route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+accountsRoute.post("/", createAccountCtrl)
 //GET/api/v1/accounts/:id
-accountsRoute.get("/:id", async (req, res) => {
-    try{
-        res.json({msg: 'Get A single account route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+accountsRoute.get("/:id", singleAccountCtrl)
 //DELETE/api/v1/accounts/:id
-accountsRoute.delete('/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Delete account route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+accountsRoute.delete('/:id', deleteAccountCtrl)
 //PUT/api/v1/accounts/:id
-accountsRoute.put('/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Update account route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+accountsRoute.put('/:id', updateAccountCtrl)
 module.exports = accountsRoute
