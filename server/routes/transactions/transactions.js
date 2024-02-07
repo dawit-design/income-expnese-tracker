@@ -1,39 +1,15 @@
 const express = require('express');
-
+const {createTransactionsCtrl, singleTransactionsCtrl, deleteTransactionsCtrl, updateTransactionsCtrl} = require("../../controllers/transactions/transactionsCtrl")
 const transactionsRoute = express.Router()
 
 //POST/api/v1/transactions
-transactionsRoute.post('/', async (req, res) => {
-    try{
-        res.json({msg: 'Create transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+transactionsRoute.post('/', createTransactionsCtrl)
 //GET/api/v1/transactions/:id
-transactionsRoute.get('/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Get A single transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+transactionsRoute.get('/:id', singleTransactionsCtrl)
 
 //DELETE/api/v1/transactions/:id
-transactionsRoute.delete('/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Delete transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+transactionsRoute.delete('/:id', deleteTransactionsCtrl)
 //PUT/api/v1/transactions/:id
-transactionsRoute.put('/:id', async (req, res) => {
-    try{
-        res.json({msg: 'Update transactions route'})
-    }catch(error){
-        res.json(error)
-    }
-})
+transactionsRoute.put('/:id', updateTransactionsCtrl)
 
 module.exports = transactionsRoute
