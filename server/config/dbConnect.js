@@ -12,3 +12,4 @@ const dbConnect = async (req, res) => {
     }
 }
 
+dbConnect()
