@@ -35,7 +35,8 @@ const transactionSchema = new mongoose.Schema(
         ref: "User",
     },
     dateRecoreded: {
-        
+        type: Date,
+        default: Date.now()
     },
     notes: {
         type: String,
@@ -49,5 +50,5 @@ const transactionSchema = new mongoose.Schema(
 );
 
 //model
-const Account = mongoose.model("User", accountSchema);
-module.exports = Account;
+const Transaction = mongoose.model("User", transactionSchema);
+module.exports = Transaction;
